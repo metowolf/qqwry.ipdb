@@ -3,6 +3,8 @@ node_js:
   - '10'
 sudo: enabled
 dist: xenial
+install:
+  - yarn
 script:
   - printf -- "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
   - npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}";
