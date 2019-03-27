@@ -1,0 +1,10 @@
+language: nodejs
+node_js:
+  - '10'
+sudo: enabled
+dist: xenial
+script:
+  - printf -- "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
+  - npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}";
+  - chmod +x ./build.sh
+  - "./build.sh"
