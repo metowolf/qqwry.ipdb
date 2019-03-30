@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -ex
+set -e
 
 mkdir -p build/stand
 mkdir -p build/raw
@@ -13,7 +13,7 @@ node src/packer.js
 node src/packer_raw.js
 
 LATEST_VERSION=`node src/version.js`
-CURRENT_VERSION=`grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[", ]//g'`
+CURRENT_VERSION=`curl https://cdn.jsdelivr.net/npm/qqwry.ipdb/package.json?r=$LATEST_VERSION |grep -m1 version | awk -F: '{ print $2 }' | sed 's/[", ]//g'`
 
 if [ $CURRENT_VERSION != $LATEST_VERSION ]; then
   cd build/raw
@@ -23,7 +23,4 @@ if [ $CURRENT_VERSION != $LATEST_VERSION ]; then
   cd build/stand
   npm publish
   cd ../..
-
-  npm version $LATEST_VERSION
-  git push origin master
 fi
