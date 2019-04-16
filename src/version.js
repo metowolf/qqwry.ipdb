@@ -10,6 +10,7 @@ console.log(version)
 let json = {
   name: 'qqwry.ipdb',
   version: '',
+  description: '兼容 IPIP.net(ipdb) 格式的纯真离线数据库',
   main: 'index.js',
   repository: 'git@github.com:metowolf/qqwry.ipdb.git',
   author: 'metowolf <i@i-meto.com>',

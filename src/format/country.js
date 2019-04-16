@@ -1,4 +1,4 @@
-const isos = {
+module.exports = {
   '中国': {
     '北京': ['北京'],
     '天津': ['天津'],
@@ -279,75 +279,4 @@ const isos = {
   '欧洲地区': [],
   '非洲地区': [],
   'IANA': [],
-}
-
-const chinakeyword = [
-  '中国', '省', '市', ...Object.keys(isos['中国']),
-]
-
-const isps = [
-  '中华电信',
-  '电信',
-  '联通',
-  '移动',
-  '教育网',
-  '广电网',
-]
-
-module.exports = (country, area) => {
-
-  for (let keyword of chinakeyword) {
-    if (country.includes(keyword)) {
-      area = country + area
-      country = '中国'
-      break
-    }
-  }
-
-  let result = {
-    country,
-    area,
-    country_name: '',
-    region_name: '',
-    city_name: '',
-    owner_domain: '',
-    isp_domain: '',
-    format: true,
-  }
-
-  if (isos[country]) {
-    result.country_name = country
-    result.region_name = country
-
-    let regions = isos[country], citys = []
-    for (let [region, value] of Object.entries(regions)) {
-      if (area.includes(region)) {
-        result.region_name = region
-        citys = value
-        break
-      }
-    }
-
-    for (let city of citys) {
-      if (area.includes(city)) {
-        result.city_name = city
-        break
-      }
-    }
-  }
-
-  if (result.country_name === '') {
-    result.country_name = country
-    result.region_name = area
-    result.format = false
-  }
-
-  for (let isp of isps) {
-    if (area.includes(isp)) {
-      result.isp_domain = isp
-      break
-    }
-  }
-
-  return result
 }
