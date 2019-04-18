@@ -155,7 +155,7 @@ ip-regex@^2.1.0:
   resolved "https://registry.yarnpkg.com/ip-regex/-/ip-regex-2.1.0.tgz#fa78bf5d2e6913c911ce9f819ee5146bb6d844e9"
   integrity sha1-+ni/XS5pE8kRzp+BnuUUa7bYROk=
 
-ipdb@^0.2.1:
+ipdb@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/ipdb/-/ipdb-0.2.2.tgz#81788428e3f239fac6a1dff813f2f8eaad6f6183"
   integrity sha512-1Juy0nvPHpAcZig7WOoAA5DUeQwBoSIE3yivkIK72QM0j20q9M6beDyHkHisEzqvWvIMIM0uR+WtXvwUxYF+mQ==

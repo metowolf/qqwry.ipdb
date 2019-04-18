@@ -6,6 +6,7 @@
 ## 标准版
 
 ![](https://img.shields.io/npm/v/qqwry.ipdb.svg?style=for-the-badge&label=VERSION)
+![](https://img.shields.io/npm/dm/qqwry.ipdb.svg?style=for-the-badge)
 
 ```
 https://cdn.jsdelivr.net/npm/qqwry.ipdb/qqwry.ipdb
@@ -25,6 +26,7 @@ https://cdn.jsdelivr.net/npm/qqwry.ipdb/qqwry.ipdb
 ## 原版
 
 ![](https://img.shields.io/npm/v/qqwry.raw.ipdb.svg?style=for-the-badge&label=VERSION)
+![](https://img.shields.io/npm/dm/qqwry.raw.ipdb.svg?style=for-the-badge)
 
 ```
 https://cdn.jsdelivr.net/npm/qqwry.raw.ipdb/qqwry.ipdb
@@ -72,8 +74,9 @@ ipdb.find('183.62.57.1');
 
 ## 感谢
 
- - 文章 [IPIP.net 地址库格式分析](https://i-meto.com/ipdb-database/) 提供的格式逆向分析
- - SukkaW 的 [qqwry-mirror](https://github.com/SukkaW/qqwry-mirror) 项目提供的灵感
- - IPIP.net 设计的 [IPDB 离线数据库](https://www.ipip.net/product/ip.html#ipv4city)格式及其[解析代码](https://www.ipip.net/product/client.html)
- - 由 [@ipdb/packer](https://github.com/metowolf/ipdb-packer) 提供的 IPDB 格式打包解决方案
- - 纯真论坛提供的[免费离线数据库](http://www.cz88.net/ip/)数据
+ - 感谢由 [ipdb](https://github.com/metowolf/ipdb) 提供的 IPDB 格式解析解决方案
+ - 感谢由 [@ipdb/packer](https://github.com/metowolf/ipdb-packer) 提供的 IPDB 格式打包解决方案
+ - 感谢文章 [IPIP.net 地址库格式分析](https://i-meto.com/ipdb-database/) 提供的格式逆向分析
+ - 感谢苏卡卡的 [qqwry-mirror](https://github.com/SukkaW/qqwry-mirror) 项目提供的灵感
+ - 感谢纯真网络提供的[免费离线数据库](http://www.cz88.net/ip/)，以及纯真论坛的热心网友们
+ - 感谢 IPIP.net 设计的 [IPDB 离线数据库](https://www.ipip.net/product/ip.html#ipv4city)格式及其[解析代码](https://www.ipip.net/product/client.html)

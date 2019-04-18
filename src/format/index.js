@@ -1,15 +1,11 @@
+const countryfix_list = require('./countryfix')
 const country_list = require('./country')
 const china_keyword = ['中国', '省', '市', ...Object.keys(country_list['中国'])]
 const school_list = require('./school')
+const isp_list = require('./isp')
 
-const isps = [
-  '中华电信',
-  '电信',
-  '联通',
-  '移动',
-  '教育网',
-  '广电网',
-]
+
+const cache = {}
 
 module.exports = (country, area) => {
 
@@ -20,6 +16,11 @@ module.exports = (country, area) => {
       country = '中国'
       break
     }
+  }
+
+  // error country
+  if (countryfix_list[country]) {
+    country = countryfix_list[country]
   }
 
   let result = {
@@ -40,6 +41,7 @@ module.exports = (country, area) => {
     result.country_name = info[0]
     result.region_name = info[1]
     result.city_name = info[2]
+    result.owner_domain = info[3]
   }
 
   // country match
@@ -49,7 +51,7 @@ module.exports = (country, area) => {
 
     let regions = country_list[country], citys = []
     for (let [region, value] of Object.entries(regions)) {
-      if (area.includes(region)) {
+      if (region !== country && area.includes(region)) {
         result.region_name = region
         citys = value
         break
@@ -64,18 +66,29 @@ module.exports = (country, area) => {
     }
   }
 
+  // isp match
+  if (isp_list[result.country_name]) {
+    for (let isp of isp_list[result.country_name]) {
+      if (area.includes(isp)) {
+        result.isp_domain = isp
+        break
+      }
+    }
+  }
+
   if (result.country_name === '') {
     result.country_name = country
     result.region_name = area
     result.format = false
   }
 
-  for (let isp of isps) {
-    if (area.includes(isp)) {
-      result.isp_domain = isp
-      break
-    }
-  }
+  // let t = `${result.country} ${result.area}`
+  // if (!cache[t]) {
+  //   cache[t] = true
+  //   if (result.format == false) {
+  //     console.log(result)
+  //   }
+  // }
 
   return result
 }

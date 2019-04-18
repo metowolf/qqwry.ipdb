@@ -26,7 +26,7 @@ while (true) {
 }
 
 for (let [info, cidrs] of Object.entries(hash)) {
-  console.log(info)
+  console.log([cidrs[0], info].join('\t'))
   let t = info.split('\t')
   cidrs = cidrTools.merge(cidrs)
   for (let cidr of cidrs) {
