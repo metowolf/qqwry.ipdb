@@ -13,7 +13,7 @@ while (true) {
   let cidrs = range2cidrs(data.begInt, data.endInt)
 
   for (let cidr of cidrs) {
-    packer.insert(cidr, [data.Country, data.Area])
+    packer.insert(cidr, [data.Country, data.Area, '', '', ''])
   }
 
   if (data.endIP === '255.255.255.255') break
@@ -21,7 +21,7 @@ while (true) {
 }
 
 let chunk = packer.output([
-  'country', 'area',
+  'country', 'area', 'pad1', 'pad2', 'pad3'
 ])
 
 fs.writeFileSync('./build/raw/qqwry.ipdb', chunk)

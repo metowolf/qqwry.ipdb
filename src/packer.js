@@ -15,7 +15,7 @@ let hash = {}
 while (true) {
   let data = qqwry.searchIPScope(ip, ip)[0]
 
-  let info = format(data.Country, data.Area)
+  let info = format(data.Country, data.Area, ip)
   let cidrs = range2cidrs(data.begInt, data.endInt)
   let info_string = [info.country_name, info.region_name, info.city_name, info.owner_domain, info.isp_domain].join('\t')
   if (!hash[info_string]) hash[info_string] = []

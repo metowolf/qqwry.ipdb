@@ -19,7 +19,7 @@ https://cdn.jsdelivr.net/npm/qqwry.ipdb/qqwry.ipdb
 |`country_name`|国家名称|
 |`region_name`|区域名称，中国为省份|
 |`city_name`|城市名称，中国为市级|
-|`owner_domain`|纯真数据库暂不匹配|
+|`owner_domain`|拥有者域名|
 |`isp_domain`|运营商名称|
 
 
@@ -32,16 +32,19 @@ https://cdn.jsdelivr.net/npm/qqwry.ipdb/qqwry.ipdb
 https://cdn.jsdelivr.net/npm/qqwry.raw.ipdb/qqwry.ipdb
 ```
 
-原版**仅部分兼容**[官方 IPDB 格式解析代码](https://www.ipip.net/product/client.html)，只提供和纯真格式相似的两个解析字段。
+原版兼容所有[官方 IPDB 格式解析代码](https://www.ipip.net/product/client.html)，只提供和纯真格式相似的两个解析字段，后面三个字段为兼容占位使用。
 
 |name|info|
 |:---:|---|
 |`country`|国家名称|
 |`area`|区域名称|
+|`pad1`|兼容占位|
+|`pad2`|兼容占位|
+|`pad3`|兼容占位|
 
 ## 实例
 
-以 [metowolf/ipdb](https://github.com/metowolf/ipdb) 为例，首先安装依赖并下载标准版数据库
+以 [metowolf/ipdb](https://github.com/metowolf/ipdb) 解析库为例，首先安装依赖并下载标准版数据库
 
 ```
 $ yarn add ipdb
