@@ -3,6 +3,7 @@ module.exports = {
   '微软': 'microsoft.com',
   'Microsoft': 'microsoft.com',
   'j:COM电信': 'jcom.co.jp',
+  '中华电信': 'hinet.net',
   'HANELCOM公司': 'hanelcom.vn',
   'Yandex': 'yandex.ru',
   'Zenlayer': 'zenlayer.com',
@@ -21,4 +22,6 @@ module.exports = {
   'Google云计算': 'cloud.google.com',
   '国际航空电讯集团公司(SITA)': 'sita.aero',
   'True网络': 'trueinternet.co.th',
+  'Cloudflare': 'cloudflare.com',
+  'CloudFlare': 'cloudflare.com'
 }
