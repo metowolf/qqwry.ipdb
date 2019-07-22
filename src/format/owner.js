@@ -12,6 +12,8 @@ module.exports = {
   'NTT通信': 'ntt.com',
   'Cogent通信': 'cogentco.com',
   'DigitalOcean': 'digitalocean.com',
+  'Choopa': 'choopa.com',
+  'choopa': 'choopa.com',
   'KT电信': 'kt.com',
   'Amazon数据中心': 'amazon.com',
   '亚马逊(Amazon)公司数据中心': 'amazon.com',
@@ -22,6 +24,7 @@ module.exports = {
   'Google云计算': 'cloud.google.com',
   '国际航空电讯集团公司(SITA)': 'sita.aero',
   'True网络': 'trueinternet.co.th',
+  'M247': '',
   'Cloudflare': 'cloudflare.com',
   'CloudFlare': 'cloudflare.com'
 }
