@@ -8,9 +8,12 @@
 ![](https://img.shields.io/npm/v/qqwry.ipdb.svg?style=for-the-badge&label=VERSION)
 ![](https://img.shields.io/npm/dm/qqwry.ipdb.svg?style=for-the-badge)
 
-```
-https://cdn.jsdelivr.net/npm/qqwry.ipdb/qqwry.ipdb
-```
+
+|CDN|URL|
+|:---:|---|
+|[jsdelivr](https://cdn.jsdelivr.net/npm/qqwry.ipdb/)|https://cdn.jsdelivr.net/npm/qqwry.ipdb/qqwry.ipdb|
+|[unpkg](https://unpkg.com/browse/qqwry.ipdb/)|https://unpkg.com/qqwry.ipdb/qqwry.ipdb|
+
 
 标准版兼容所有[官方 IPDB 格式解析代码](https://www.ipip.net/product/client.html)，提供与[官方每周高级版](https://www.ipip.net/product/ip.html#ipv4city)相同的五个解析字段。
 
@@ -28,9 +31,12 @@ https://cdn.jsdelivr.net/npm/qqwry.ipdb/qqwry.ipdb
 ![](https://img.shields.io/npm/v/qqwry.raw.ipdb.svg?style=for-the-badge&label=VERSION)
 ![](https://img.shields.io/npm/dm/qqwry.raw.ipdb.svg?style=for-the-badge)
 
-```
-https://cdn.jsdelivr.net/npm/qqwry.raw.ipdb/qqwry.ipdb
-```
+
+|CDN|URL|
+|:---:|---|
+|[jsdelivr](https://cdn.jsdelivr.net/npm/qqwry.raw.ipdb/)|https://cdn.jsdelivr.net/npm/qqwry.raw.ipdb/qqwry.ipdb|
+|[unpkg](https://unpkg.com/browse/qqwry.raw.ipdb/)|https://unpkg.com/qqwry.raw.ipdb/qqwry.ipdb|
+
 
 原版兼容所有[官方 IPDB 格式解析代码](https://www.ipip.net/product/client.html)，只提供和纯真格式相似的两个解析字段，后面三个字段为兼容占位使用。
 
@@ -82,4 +88,4 @@ ipdb.find('183.62.57.1');
  - 感谢文章 [IPIP.net 地址库格式分析](https://i-meto.com/ipdb-database/) 提供的格式逆向分析
  - 感谢苏卡卡的 [qqwry-mirror](https://github.com/SukkaW/qqwry-mirror) 项目提供的灵感
  - 感谢纯真网络提供的[免费离线数据库](http://www.cz88.net/ip/)，以及纯真论坛的热心网友们
- - 感谢 IPIP.net 设计的 [IPDB 离线数据库](https://www.ipip.net/product/ip.html#ipv4city)格式及其[解析代码](https://www.ipip.net/product/client.html)
+
