@@ -1,30 +1,31 @@
-const countryfix_list = require('./countryfix')
-const country_list = require('./country')
-const china_keyword = ['中国', '省', '市', ...Object.keys(country_list['中国'])]
-const school_list = require('./school')
-const isp_list = require('./isp')
-const owner_list = require('./owner')
+const iso3166 = require('./data/iso3166')
+const countryfix_list = require('./data/countryfix')
+const isp_list = require('./data/isp')
+const owner_list = require('./data/owner')
 
-const cache = {}
+const china_keyword = [
+  '中国',
+  ...Object.keys(iso3166['中国']),
+]
 
-module.exports = (country, area, ip) => {
-
-  country = country.trim()
-  area = area.trim()
-
-  // china_keyword
-  for (let keyword of china_keyword) {
-    if (country.includes(keyword)) {
-      area = country + area
-      country = '中国'
-      break
+/**
+ * 进行市级粒度深度匹配
+ */
+const cityDeepMatch = (result, country, area) => {
+  let regions = iso3166[country]
+  for (let [region, value] of Object.entries(regions)) {
+    for (let city of value) {
+      if (area.includes(city)) {
+        result.region_name = region
+        result.city_name = city
+        result.format += '[city deep]'
+        return result
+      }
     }
   }
+}
 
-  // error country
-  if (countryfix_list[country]) {
-    country = countryfix_list[country]
-  }
+module.exports = (country, area, ip) => {
 
   let result = {
     country,
@@ -35,70 +36,113 @@ module.exports = (country, area, ip) => {
     city_name: '',
     owner_domain: '',
     isp_domain: '',
-    format: 0,
+    format: '',
   }
 
-  // school match
-  if (school_list[country]) {
-    let info = school_list[country]
-    result.country_name = info[0]
-    result.region_name = info[1]
-    result.city_name = info[2]
-    result.format = 3
-    if (!area.includes('网吧')) {
-      result.owner_domain = info[3]
-      result.format = 5
+  country = country.trim()
+  area = area.trim()
+
+  /**
+   * 修正纯真数据库中国地区标注
+   *
+   * 默认中国地区 IP 标注格式为 `xx省xx市 xx运营商`，修改为 `中国 xx省xx市xx运营商`
+   */
+  for (let keyword of china_keyword) {
+    if (country.includes(keyword)) {
+      area = country + area
+      country = '中国'
+      break
     }
   }
 
-  // country match
-  if (country_list[country]) {
+  /**
+   * 修正纯真数据库中无法识别的国家
+   *
+   * 通常因命名不规范导致
+   */
+  if (countryfix_list[country]) {
+    let info = countryfix_list[country].split('/')
+    country = info[0]
+    if (info.length === 2) area = info[1] + area
+  }
+
+  /**
+   * 预处理中国教育网
+   */
+  if (country === '中国' && area.includes('大学') && !area.includes('网吧')) {
+    area += '(教育网)'
+  }
+
+  /**
+   * 进行国家粒度匹配
+   */
+  if (iso3166[country]) {
     result.country_name = country
     result.region_name = country
-    result.format = 1
-    if (area === 'CZ88.NET') {
-      result.format = 2
-    }
+    result.format += '[country]'
 
-    let regions = country_list[country], citys = []
+    /**
+     * 进行省级粒度匹配
+     */
+    let regions = iso3166[country], citys = []
     for (let [region, value] of Object.entries(regions)) {
       if (region !== country && area.includes(region)) {
         result.region_name = region
-        result.format = 2
+        result.format += '[region]'
         citys = value
         break
       }
     }
 
-    for (let city of citys) {
-      if (area.includes(city)) {
-        result.city_name = city
-        result.format = 3
-        break
+    /**
+     * 进行市级粒度匹配
+     */
+    if (citys.length) {
+      for (let city of citys) {
+        if (area.includes(city)) {
+          result.city_name = city
+          result.format += '[city]'
+          break
+        }
       }
+    } else {
+      cityDeepMatch(result, country, area)
     }
+
   }
 
-  // isp match
-  if (isp_list[result.country_name]) {
-    for (let isp of isp_list[result.country_name]) {
-      if (area.includes(isp)) {
-        result.isp_domain = isp
-        result.format = 4
-        break
-      }
-    }
-  }
-
-  // owner match
-  for (let [owner, value] of Object.entries(owner_list)) {
-    if (area.includes(owner)) {
-      result.owner_domain = value
-      result.format = 5
+  /**
+   * 进行运营商匹配
+   */
+  let isps = isp_list[`${result.country_name}-${result.region_name}`]
+    || isp_list[result.country_name]
+    || []
+  for (let isp of isps) {
+    if (area.includes(isp)) {
+      result.isp_domain = isp
+      result.format += '[isp]'
       break
     }
   }
 
+  /**
+   * 进行服务持有方匹配
+   */
+  let owners = owner_list[`${result.country_name}-${result.region_name}`]
+    || owner_list[result.country_name]
+    || []
+  owners = {...owners, ...owner_list['国际']}
+  for (let [owner, value] of Object.entries(owners)) {
+    if (area.toLowerCase().includes(owner)) {
+      result.owner_domain = value
+      result.format += '[owner]'
+      break
+    }
+  }
+
+  /**
+   * 数据兜底
+   */
   if (result.country_name === '') {
     result.country_name = country
     result.region_name = area

@@ -43,12 +43,12 @@ cidr-regex@^2.0.10:
   dependencies:
     ip-regex "^2.1.0"
 
-cidr-tools@^2.2.8:
-  version "2.2.8"
-  resolved "https://registry.yarnpkg.com/cidr-tools/-/cidr-tools-2.2.8.tgz#928e828c9f1b3b97918e9e65c2edfca579724916"
-  integrity sha512-A/xvQXULkINGWhm1FCMsZdvWLmekoea/ydOijiVpWVC4jNfSsXevdRqingdtOz2s6it57NKc4byPgyQEwwSFrw==
+cidr-tools@^2.2.9:
+  version "2.2.9"
+  resolved "https://registry.yarnpkg.com/cidr-tools/-/cidr-tools-2.2.9.tgz#fde3d5321a07587c59c6b125c0378944e20df2a1"
+  integrity sha512-RcwNxNqudojbr/RQ3bxMRAgpk+NauL57d5KdVGaY3+cYYr8kZYqFBZHDe/TV2GSJTCL9FdhAS4Efogajp7UFOg==
   dependencies:
-    ip-address "^5.9.0"
+    ip-address "^5.9.2"
     ip-cidr "^2.0.2"
     ipv6-normalize "^1.0.1"
     is-cidr "^3.0.0"
@@ -129,13 +129,22 @@ has-flag@^3.0.0:
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
   integrity sha1-tdRU3CGZriJWmfNGfloH87lVuv0=
 
-ip-address@^5.8.6, ip-address@^5.9.0:
+ip-address@^5.8.6:
   version "5.9.2"
   resolved "https://registry.yarnpkg.com/ip-address/-/ip-address-5.9.2.tgz#8e7d2dab5cbf3cbf34e1f730ec6913f55fec8c74"
   integrity sha512-7aeFm/7oqo0mMhubTSjZ2Juw/F+WJ3hyfCScNVRQdz5RSRhw1Rj4ZlBFsmEajeKgQDI8asqVs31h8DpxEv7IfQ==
   dependencies:
     jsbn "1.1.0"
     lodash "^4.17.11"
+    sprintf-js "1.1.2"
+
+ip-address@^5.9.2:
+  version "5.9.4"
+  resolved "https://registry.yarnpkg.com/ip-address/-/ip-address-5.9.4.tgz#4660ac261ad61bd397a860a007f7e98e4eaee386"
+  integrity sha512-dHkI3/YNJq4b/qQaz+c8LuarD3pY24JqZWfjB8aZx1gtpc2MDILu9L9jpZe1sHpzo/yWFweQVn+U//FhazUxmw==
+  dependencies:
+    jsbn "1.1.0"
+    lodash "^4.17.15"
     sprintf-js "1.1.2"
 
 ip-cidr@^2.0.2:
@@ -230,10 +239,10 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
   integrity sha512-s5kLOcnH0XqDO+FvuaLX8DDjZ18CGFk7VygH40QoKPUQhW4e2rvM0rwUq0t8IQDOwYSeLK01U90OjzBTme2QqA==
 
-lib-qqwry@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/lib-qqwry/-/lib-qqwry-1.3.0.tgz#a388dc7078d98dbc00beaafc2df95ee206b98f4e"
-  integrity sha512-zWMxX7R9O3JIIipJirnf9M7ZdG6B4inOnOxPcqZyD3h6l+BB6d4J+MNtE5yQEAlW3UXB0JMObEd8oR16m0UIcQ==
+lib-qqwry@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/lib-qqwry/-/lib-qqwry-1.3.1.tgz#440643cc6115165c23144d03c1ae26f75e528696"
+  integrity sha512-nhAjP8eYCaKMb9lTrxszRRdKq43hHCCDaqch/ZdghiFFJpyKjqcDQMdzRr5tBwF9JlXqIqX5Uf+WUcOPeOpA1g==
   dependencies:
     axios "^0.18.0"
     chalk "^2.4.2"
@@ -247,6 +256,11 @@ lodash@^4.17.11:
   version "4.17.14"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
   integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
+
+lodash@^4.17.15:
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
+  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
 ms@2.0.0:
   version "2.0.0"
