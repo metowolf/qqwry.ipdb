@@ -1,7 +1,13 @@
-const iso3166 = require('./data/iso3166')
+const Iso3166 = require('./data/iso3166')
+const iso3166 = Iso3166.init()
+
 const countryfix_list = require('./data/countryfix')
 const isp_list = require('./data/isp')
-const owner_list = require('./data/owner')
+
+const Owner = require('./data/owner')
+const owner_list = Owner.init()
+
+const specialFix = require('./data/special')
 
 const china_keyword = [
   '中国',
@@ -112,6 +118,11 @@ module.exports = (country, area, ip) => {
   }
 
   /**
+   * 进行特殊修正
+   */
+  specialFix(result)
+
+  /**
    * 进行运营商匹配
    */
   let isps = isp_list[`${result.country_name}-${result.region_name}`]
@@ -131,7 +142,7 @@ module.exports = (country, area, ip) => {
   let owners = owner_list[`${result.country_name}-${result.region_name}`]
     || owner_list[result.country_name]
     || []
-  owners = {...owners, ...owner_list['国际']}
+  owners = {...owners, ...owner_list['*']}
   for (let [owner, value] of Object.entries(owners)) {
     if (area.toLowerCase().includes(owner)) {
       result.owner_domain = value
@@ -146,7 +157,7 @@ module.exports = (country, area, ip) => {
   if (result.country_name === '') {
     result.country_name = country
     result.region_name = area
-    result.format = 0
+    result.format += '[failed]'
   }
 
   return result
