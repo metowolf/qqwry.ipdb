@@ -27,6 +27,7 @@ const list = [
   ['cdnetworks.com', 'CDNetworks', '*'],
   ['hp.com', '惠普HP', '*'],
   ['apple.com', 'apple', '*'],
+  ['fastly.com', 'Fastly', '*'],
   // 混合
   ['rixcloud.com', 'rixcloud', ['中国-香港', '美国', '日本', '英国', '俄罗斯', '巴西', '荷兰', '新加坡']],
   ['linode.com', 'linode', ['德国', '日本', '美国', '英国', '新加坡', '德国', '加拿大']],
