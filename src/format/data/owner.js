@@ -4,6 +4,7 @@ const list = [
   ['microsoft.com', ['microsoft', '微软'], '*'],
   ['akamai.com', 'akamai', '*'],
   ['amazon.com', 'amazon', '*'],
+  ['amazon.com', 'cloudfront', '*'],
   ['digitalocean.com', 'digitalocean', '*'],
   ['choopa.com', 'choopa', '*'],
   ['ntt.com', ['ntt网络', 'ntt通信'], '*'],
