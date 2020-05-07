@@ -1658,7 +1658,7 @@ const list = {
 }
 
 module.exports.init = () => {
-  for (const [country, regions] of Object.entries(list)) {
+  for (const [, regions] of Object.entries(list)) {
     for (let [region, citys] of Object.entries(regions)) {
       if (region.includes('|')) {
         delete regions[region]

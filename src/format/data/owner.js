@@ -53,6 +53,8 @@ const list = [
   ['defense.gov', '国防部', '美国'],
   ['dod.com', 'DoD网络信息中心', '美国'],
   ['ibm.com', 'IBM公司', '美国'],
+  ['comcast.com', 'Comcast通信公司', '美国'],
+  ['rackspace.com', 'Rackspace Hosting公司', '美国'],
   // 新西兰
   ['vocus.co.nz', 'vocus', '新西兰'],
   // 越南
