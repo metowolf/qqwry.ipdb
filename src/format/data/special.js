@@ -1,5 +1,9 @@
 const rules = [
   [
+    ['country_name', '美国', 'region_name', '俄克拉荷马州', 'city_name', '俄克拉荷马城'],
+    ['region_name', '奥克拉荷马州', 'city_name', '奥克拉荷马城'],
+  ],
+  [
     ['country_name', '美国', 'region_name', '乔治亚州'],
     ['region_name', '佐治亚州'],
   ],
@@ -8,8 +12,20 @@ const rules = [
     ['region_name', '德克萨斯州'],
   ],
   [
-    ['country_name', '美国', 'region_name', '罗得岛州'],
-    ['region_name', '罗德岛州'],
+    ['country_name', '美国', 'region_name', '俄克拉荷马州'],
+    ['region_name', '奥克拉荷马州'],
+  ],
+  [
+    ['country_name', '美国', 'region_name', '罗德岛州'],
+    ['region_name', '罗得岛州'],
+  ],
+  [
+    ['country_name', '俄罗斯', 'region_name', '伊尔库州'],
+    ['region_name', '伊尔库茨克州'],
+  ],
+  [
+    ['country_name', '韩国', 'region_name', '首尔'],
+    ['region_name', '首尔特别市'],
   ],
 ]
 
