@@ -1,7 +1,9 @@
 # qqwry.ipdb
 
 纯真数据库 IPIP.net 格式版，精简并匹配为国家、省、市、运营商。  
-版本随上游 `update.cz88.net` 每天同步更新。
+~~版本随上游 `update.cz88.net` 每天同步更新。~~
+
+ > 接到邮件通知，本项目将暂停更新，仅基于 2020.12.5 数据库维护修订版本
 
 ## 标准版
 
@@ -87,5 +89,5 @@ ipdb.find('183.62.57.1');
  - 感谢由 [@ipdb/packer](https://github.com/metowolf/ipdb-packer) 提供的 IPDB 格式打包解决方案
  - 感谢文章 [IPIP.net 地址库格式分析](https://i-meto.com/ipdb-database/) 提供的格式逆向分析
  - 感谢苏卡卡的 [qqwry-mirror](https://github.com/SukkaW/qqwry-mirror) 项目提供的灵感
- - 感谢纯真网络提供的[免费离线数据库](http://www.cz88.net/ip/)，以及纯真论坛的热心网友们
+ - 感谢纯真网络提供的[免费离线数据库](http://www.cz88bbs.com/)，以及纯真论坛的热心网友们
 
