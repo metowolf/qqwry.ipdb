@@ -24,6 +24,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with: 
           name: qqwry
-          path: build/stand/qqwry.ipdb
+          path: build/stand/qqwry.tar.gz
           if-no-files-found: error
           retention-days: 30
