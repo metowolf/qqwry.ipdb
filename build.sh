@@ -11,7 +11,7 @@ innoextract_path=`pwd`/exe_tool/innoextract
 rm -rfv $temp_dir
 mkdir $temp_dir
 cd $temp_dir
-apt install innoextract -y
+#apt install innoextract -y
 
 # down
 wget $chunzhen_url
