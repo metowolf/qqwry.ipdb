@@ -27,7 +27,7 @@ $innoextract_path setup.exe
 #cd "$current_dir" || exit
 mkdir -p build/stand
 mkdir -p build/raw
-cp ./app/qqwry.dat ./build/stand/
+cp ./app/qqwry.dat ./build/.
 
 
 
