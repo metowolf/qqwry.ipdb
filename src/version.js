@@ -3,7 +3,7 @@ const IPDB = require('ipdb')
 const ipdb = new IPDB('./build/raw/qqwry.ipdb')
 
 let result = ipdb.find('255.255.255.255')
-let version = result.data.area.match(/(\d+)/gi).join('.')
+let version = result.data.area.match(/(\d+)/gi).map(x => parseInt(x)).join('.')
 
 console.log(version)
 

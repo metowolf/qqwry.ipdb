@@ -43,13 +43,13 @@ cidr-regex@^3.1.1:
   dependencies:
     ip-regex "^4.1.0"
 
-cidr-tools@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/cidr-tools/-/cidr-tools-3.0.3.tgz#54acefab244b09127fe0394b2054d8cbccdeee57"
-  integrity sha512-HxZn2dEKBS3tMoznWktHB9/iQlfu7JMEmd3AxWYBSqjGAdLejUHqidr0RFY5DGdmZ801/e/Swfo2FAhtJEOOmg==
+cidr-tools@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/cidr-tools/-/cidr-tools-3.0.5.tgz#78f7da7a37f74dd4ebdb7981a2fc15e4c184f6c2"
+  integrity sha512-HJq4eo/cQS4kNjm3fri/HVVT+/0HjsTTEOW/hSG9LXQMZso4SGMOLh6WdC/wfwafXxr+niJCCO9xNU0PuYlt2w==
   dependencies:
-    ip-address "^7.0.1"
-    ip-cidr "^2.1.0"
+    ip-address "^7.1.0"
+    ip-cidr "^2.1.2"
     ipv6-normalize "^1.0.1"
     is-cidr "^4.0.2"
     is-ip "^3.1.0"
@@ -143,7 +143,7 @@ ip-address@^6.3.0:
     lodash.repeat "4.1.0"
     sprintf-js "1.1.2"
 
-ip-address@^7.0.1:
+ip-address@^7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/ip-address/-/ip-address-7.1.0.tgz#4a9c699e75b51cbeb18b38de8ed216efa1a490c5"
   integrity sha512-V9pWC/VJf2lsXqP7IWJ+pe3P1/HCYGBMZrrnT62niLGjAfCbeiwXMUxaeHvnVlz19O27pvXP4azs+Pj/A0x+SQ==
@@ -151,18 +151,18 @@ ip-address@^7.0.1:
     jsbn "1.1.0"
     sprintf-js "1.1.2"
 
-ip-cidr@^2.1.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/ip-cidr/-/ip-cidr-2.1.1.tgz#e54e4317dd812a84fe361d89610e2e4166ccd19a"
-  integrity sha512-aeQXlWwFzEIJ5Iq+KmgVh4rafGXzwbiwVUXgXsZjoFFqApxCSuQu3rwNaQ9S+NNatWTJ78KBZBqZjmDKKjxUVw==
+ip-cidr@^2.1.2:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/ip-cidr/-/ip-cidr-2.1.5.tgz#67fd02ee001d6ac0f253a1d577e4170a8f7d480b"
+  integrity sha512-Ms60rCkjP5cwZCgUu1JtJ6NFU1uL25SmOQHPfwMdw3LvNgY7gWz4cUou1+6Udp/vXo3eAf83XwhUpC0iZMSYkw==
   dependencies:
     ip-address "^6.3.0"
-    jsbn "^0.1.0"
+    jsbn "^1.1.0"
 
 ip-regex@^4.0.0, ip-regex@^4.1.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/ip-regex/-/ip-regex-4.2.0.tgz#a03f5eb661d9a154e3973a03de8b23dd0ad6892e"
-  integrity sha512-n5cDDeTWWRwK1EBoWwRti+8nP4NbytBBY0pldmnIkq6Z55KNFmWofh4rl9dPZpj+U/nVq7gweR3ylrvMt4YZ5A==
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/ip-regex/-/ip-regex-4.3.0.tgz#687275ab0f57fa76978ff8f4dddc8a23d5990db5"
+  integrity sha512-B9ZWJxHHOHUhUjCPrMpLD4xEq35bUTClHM1S6CBU5ixQnkZmwipwgc96vAd7AAGM9TGHvJR+Uss+/Ak6UphK+Q==
 
 ipdb@^0.3.3:
   version "0.3.3"
@@ -239,11 +239,6 @@ jsbn@1.1.0, jsbn@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-1.1.0.tgz#b01307cb29b618a1ed26ec79e911f803c4da0040"
   integrity sha1-sBMHyym2GKHtJux56RH4A8TaAEA=
-
-jsbn@^0.1.0:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
-  integrity sha1-peZUwuWi3rXyAdls77yoDA7y9RM=
 
 kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.3"
