@@ -5,7 +5,6 @@ const areafix_list = require('./data/areafix').init()
 const isp_list = require('./data/isp')
 const owner_list = require('./data/owner').init()
 const specialfix = require('./data/special')
-const preformat = require('./data/preformat').init()
 
 /**
  * 进行市级粒度匹配
@@ -43,19 +42,6 @@ module.exports = (country, area) => {
     city_name: '',
     owner_domain: '',
     isp_domain: ''
-  }
-
-  /**
-   * 数据库预匹配
-   */
-  if (preformat.has(`${country}|${area}`)) {
-    const info = preformat.get(`${country}|${area}`)
-    result.country_name = info.country_name
-    result.region_name = info.region_name
-    result.city_name = info.city_name
-    result.owner_domain = info.owner_domain
-    result.isp_domain = info.isp_domain
-    return result
   }
 
   /**
