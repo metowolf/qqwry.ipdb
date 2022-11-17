@@ -1,9 +1,7 @@
 # qqwry.ipdb
 
 纯真数据库 IPIP.net 格式版，精简并匹配为国家、省、市、运营商。  
-~~版本随上游 `update.cz88.net` 每天同步更新。~~
-
- > 接到邮件通知，本项目将暂停更新，仅基于 2020.12.5 数据库维护修订版本
+版本随上游 [metowolf/qqwry.dat](https://github.com/metowolf/qqwry.dat) 每周同步更新。
 
 ## 标准版
 
