@@ -4,7 +4,7 @@ const range2cidrs = require('./range2cidrs')
 const libqqwry = require('lib-qqwry')
 const qqwry = libqqwry(true, './build/qqwry.dat')
 
-const Packer = require('@ipdb/packer')
+const Packer = require('./packer')
 const packer = new Packer({ipv6: false})
 
 let ip = '0.0.0.0'
