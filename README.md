@@ -1,6 +1,9 @@
 # qqwry.ipdb
 
-纯真数据库 IPIP.net 格式版，精简并匹配为国家、省、市、运营商。
+纯真数据库 IPIP.net 格式版，精简并匹配为国家、省、市、运营商。  
+版本随上游 `update.cz88.net` 更新。
+
+ > CZDB 格式反编译工作已经完成，项目近期将恢复更新 
 
 ## 标准版
 
@@ -37,15 +40,15 @@
 |[unpkg](https://unpkg.com/browse/qqwry.raw.ipdb/)|https://unpkg.com/qqwry.raw.ipdb/qqwry.ipdb|
 
 
-原版兼容所有[官方 IPDB 格式解析代码](https://www.ipip.net/product/client.html)，只提供和纯真格式相似的两个解析字段，后面三个字段为兼容占位使用。
+**原版兼容所有[官方 IPDB 格式解析代码](https://www.ipip.net/product/client.html)，只提供和纯真格式相似的两个解析字段，后面三个字段为兼容占位使用。**
 
 |name|info|
 |:---:|---|
-|`country`|国家名称|
-|`area`|区域名称|
-|`pad1`|兼容占位|
-|`pad2`|兼容占位|
-|`pad3`|兼容占位|
+|`country_name`|国家名称，对应纯真国家字段|
+|`region_name`|区域名称，对应纯真区域字段|
+|`city_name`|城市名称，空|
+|`owner_domain`|拥有者域名，空|
+|`isp_domain`|运营商名称，空|
 
 ## 实例
 
@@ -86,5 +89,5 @@ ipdb.find('183.62.57.1');
  - 感谢由 [@ipdb/packer](https://github.com/metowolf/ipdb-packer) 提供的 IPDB 格式打包解决方案
  - 感谢文章 [IPIP.net 地址库格式分析](https://i-meto.com/ipdb-database/) 提供的格式逆向分析
  - 感谢苏卡卡的 [qqwry-mirror](https://github.com/SukkaW/qqwry-mirror) 项目提供的灵感
- - IP地址位置数据由 [纯真CZ88](https://www.cz88.net/) 提供支持
+ - 感谢纯真网络提供的[免费离线数据库](http://www.cz88bbs.com/)，以及纯真论坛的热心网友们
 
