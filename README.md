@@ -1,32 +1,9 @@
 # qqwry.ipdb
 
-纯真数据库 IPIP.net 格式版，精简并匹配为国家、省、市、运营商。  
+纯真数据库 IPIP.net 格式版，精简并匹配为国家、省、市、运营商，已支持 IPv4/IPv6。  
 版本随上游 `update.cz88.net` 更新。
 
- > CZDB 格式反编译工作已经完成，项目近期将恢复更新 
-
-## 标准版
-
-![](https://img.shields.io/npm/v/qqwry.ipdb.svg?style=for-the-badge&label=VERSION)
-![](https://img.shields.io/npm/dm/qqwry.ipdb.svg?style=for-the-badge)
-
-
-|CDN|URL|
-|:---:|---|
-|[jsdelivr](https://cdn.jsdelivr.net/npm/qqwry.ipdb/)|https://cdn.jsdelivr.net/npm/qqwry.ipdb/qqwry.ipdb|
-|[unpkg](https://unpkg.com/browse/qqwry.ipdb/)|https://unpkg.com/qqwry.ipdb/qqwry.ipdb|
-
-
-标准版兼容所有[官方 IPDB 格式解析代码](https://www.ipip.net/product/client.html)，提供与[官方每周高级版](https://www.ipip.net/product/ip.html#ipv4city)相同的五个解析字段。
-
-|name|info|
-|:---:|---|
-|`country_name`|国家名称|
-|`region_name`|区域名称，中国为省份|
-|`city_name`|城市名称，中国为市级|
-|`owner_domain`|拥有者域名|
-|`isp_domain`|运营商名称|
-
+ > 2024.12.28, CZDB 格式反编译工作已经完成，项目恢复更新
 
 ## 原版
 
@@ -49,6 +26,32 @@
 |`city_name`|城市名称，空|
 |`owner_domain`|拥有者域名，空|
 |`isp_domain`|运营商名称，空|
+
+
+## 标准版
+
+ > 标准版字典库待适配，暂时不做更新
+
+![](https://img.shields.io/npm/v/qqwry.ipdb.svg?style=for-the-badge&label=VERSION)
+![](https://img.shields.io/npm/dm/qqwry.ipdb.svg?style=for-the-badge)
+
+
+|CDN|URL|
+|:---:|---|
+|[jsdelivr](https://cdn.jsdelivr.net/npm/qqwry.ipdb/)|https://cdn.jsdelivr.net/npm/qqwry.ipdb/qqwry.ipdb|
+|[unpkg](https://unpkg.com/browse/qqwry.ipdb/)|https://unpkg.com/qqwry.ipdb/qqwry.ipdb|
+
+
+标准版兼容所有[官方 IPDB 格式解析代码](https://www.ipip.net/product/client.html)，提供与[官方每周高级版](https://www.ipip.net/product/ip.html#ipv4city)相同的五个解析字段。
+
+|name|info|
+|:---:|---|
+|`country_name`|国家名称|
+|`region_name`|区域名称，中国为省份|
+|`city_name`|城市名称，中国为市级|
+|`owner_domain`|拥有者域名|
+|`isp_domain`|运营商名称|
+
 
 ## 实例
 
@@ -85,6 +88,7 @@ ipdb.find('183.62.57.1');
 
 ## 感谢
 
+ - **感谢 GitHub Copilot 对反编译代码的支持**
  - 感谢由 [ipdb](https://github.com/metowolf/ipdb) 提供的 IPDB 格式解析解决方案
  - 感谢由 [@ipdb/packer](https://github.com/metowolf/ipdb-packer) 提供的 IPDB 格式打包解决方案
  - 感谢文章 [IPIP.net 地址库格式分析](https://i-meto.com/ipdb-database/) 提供的格式逆向分析
