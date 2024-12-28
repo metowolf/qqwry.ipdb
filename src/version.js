@@ -1,9 +1,10 @@
-const fs = require('fs')
-const IPDB = require('ipdb')
+import fs from 'fs'
+import IPDB from 'ipdb'
+
 const ipdb = new IPDB('./build/raw/qqwry.ipdb')
 
 let result = ipdb.find('255.255.255.255')
-let version = result.data.area.match(/(\d+)/gi).map(x => parseInt(x)).join('.')
+let version = result.data.region_name.match(/(\d+)/gi).map(x => parseInt(x)).join('.')
 
 console.log(version)
 
@@ -23,9 +24,6 @@ module.exports = join(__dirname, 'qqwry.ipdb')
 `
 
 json.version = version
-fs.writeFileSync('./build/stand/index.js', index.trim())
-fs.writeFileSync('./build/stand/package.json', JSON.stringify(json, null, '  '))
-
 json.name = 'qqwry.raw.ipdb'
 fs.writeFileSync('./build/raw/index.js', index.trim())
 fs.writeFileSync('./build/raw/package.json', JSON.stringify(json, null, '  '))

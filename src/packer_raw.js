@@ -1,27 +1,44 @@
-const fs = require('fs')
-const range2cidrs = require('./range2cidrs')
+import Decoder from '@ipdb/czdb'
+import Packer from '@ipdb/packer'
+import { range2cidrs } from './network.js'
+import fs from 'node:fs'
 
-const libqqwry = require('lib-qqwry')
-const qqwry = libqqwry(true, './build/qqwry.dat')
-
-const Packer = require('./packer')
-const packer = new Packer({ipv6: false})
-
-let ip = '0.0.0.0'
-while (true) {
-  let data = qqwry.searchIPScope(ip, ip)[0]
-  let cidrs = range2cidrs(data.begInt, data.endInt)
-
-  for (let cidr of cidrs) {
-    packer.insert(cidr, [data.Country, data.Area, '', '', ''])
+const files = [
+  {
+    version: 4,
+    file: './build/cz88_public_v4.czdb',
+  },
+  {
+    version: 6,
+    file: './build/cz88_public_v6.czdb',
   }
+]
 
-  if (data.endIP === '255.255.255.255') break
-  ip = libqqwry.intToIP(data.endInt + 1)
+const packer = new Packer({ipv6: true})
+for (const file of files) {
+  const hash = {}
+  const decoder = new Decoder(file.file, process.env.CZDB_TOKEN)
+  decoder.dump(info => {
+    if (!hash[info.regionInfo]) {
+      hash[info.regionInfo] = []
+    }
+    const cidrs = range2cidrs(info.startIp, info.endIp, file.version)
+    hash[info.regionInfo].push(...cidrs)
+  })
+
+  for (const [info, cidrs] of Object.entries(hash)) {
+    console.log([cidrs[0], info].join('\t'))
+    const t = info.split('\t', 2)
+    for (const cidr of cidrs) {
+      packer.insert(cidr, [
+        t[0], t[1], '', '', ''
+      ])
+    }
+  }
 }
 
-let chunk = packer.output([
-  'country', 'area', 'pad1', 'pad2', 'pad3'
+const chunk = packer.output([
+  'country_name', 'region_name', 'city_name', 'owner_domain', 'isp_domain',
 ])
 
 fs.writeFileSync('./build/raw/qqwry.ipdb', chunk)
