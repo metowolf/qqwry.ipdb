@@ -13,6 +13,8 @@ jobs:
       - name: Parse
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CZDB_DOWNLOAD_TOKEN: ${{ secrets.CZDB_DOWNLOAD_TOKEN }}
+          CZDB_TOKEN: ${{ secrets.CZDB_TOKEN }}
         run: |
-          yarn install
+          pnpm install
           ./build.sh
