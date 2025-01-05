@@ -27,9 +27,10 @@ for (const file of files) {
     const cidrs = range2cidrs(info.startIp, info.endIp, file.version)
     hash[info.regionInfo].push(...cidrs)
   })
+  console.log(`Total ${Object.keys(hash).length} records in ${file.file}`)
 
   for (const [info, cidrs] of Object.entries(hash)) {
-    console.log([cidrs[0], info].join('\t'))
+    // console.log([cidrs[0], info].join('\t'))
     const t = info.split('\t', 2)
     // 信息
     let country = '', region = '', city = '', district = '' , isp = '', owner = ''
