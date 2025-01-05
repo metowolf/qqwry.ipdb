@@ -27,3 +27,7 @@ json.version = version
 json.name = 'qqwry.raw.ipdb'
 fs.writeFileSync('./build/raw/index.js', index.trim())
 fs.writeFileSync('./build/raw/package.json', JSON.stringify(json, null, '  '))
+
+json.name = 'qqwry.ipdb'
+fs.writeFileSync('./build/stand/index.js', index.trim())
+fs.writeFileSync('./build/stand/package.json', JSON.stringify(json, null, '  '))
