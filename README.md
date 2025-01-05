@@ -30,8 +30,6 @@
 
 ## 标准版
 
- > 标准版字典库待适配，暂时不做更新
-
 ![](https://img.shields.io/npm/v/qqwry.ipdb.svg?style=for-the-badge&label=VERSION)
 ![](https://img.shields.io/npm/dm/qqwry.ipdb.svg?style=for-the-badge)
 
