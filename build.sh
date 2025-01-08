@@ -18,6 +18,7 @@ if [ $RAW_CURRENT_VERSION != $LATEST_VERSION ]; then
   cp README.md build/raw/README.md
   cd build/raw
   npm publish
+  cd ../..
 fi
 
 STANDARD_CURRENT_VERSION=`curl https://registry.npmjs.org/qqwry.ipdb | jq -r '."dist-tags".latest'`
@@ -27,4 +28,5 @@ if [ $STANDARD_CURRENT_VERSION != $LATEST_VERSION ]; then
   cp README.md build/stand/README.md
   cd build/stand
   npm publish
+  cd ../..
 fi
