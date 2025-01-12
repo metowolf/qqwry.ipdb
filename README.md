@@ -17,7 +17,7 @@
 |[unpkg](https://unpkg.com/browse/qqwry.raw.ipdb/)|https://unpkg.com/qqwry.raw.ipdb/qqwry.ipdb|
 
 
-**原版兼容所有[官方 IPDB 格式解析代码](https://www.ipip.net/product/client.html)，只提供和纯真格式相似的两个解析字段，后面三个字段为兼容占位使用。**
+**原版兼容所有[官方 IPDB 格式解析代码](https://www.ipip.net/support/code.html)，只提供和纯真格式相似的两个解析字段，后面三个字段为兼容占位使用。**
 
 |name|info|
 |:---:|---|
@@ -40,15 +40,17 @@
 |[unpkg](https://unpkg.com/browse/qqwry.ipdb/)|https://unpkg.com/qqwry.ipdb/qqwry.ipdb|
 
 
-标准版兼容所有[官方 IPDB 格式解析代码](https://www.ipip.net/product/client.html)，提供与[官方每周高级版](https://www.ipip.net/product/ip.html#ipv4city)相同的五个解析字段。
+标准版兼容所有[官方 IPDB 格式解析代码](https://www.ipip.net/product/client.html)，提供与[官方每日专业版](https://www.ipip.net/product/ip.html#ipv4city)类似的 7 个解析字段。
 
 |name|info|
 |:---:|---|
 |`country_name`|国家名称|
 |`region_name`|区域名称，中国为省份|
 |`city_name`|城市名称，中国为市级|
+|`district_name`|区县名称|
 |`owner_domain`|拥有者域名|
 |`isp_domain`|运营商名称|
+|`country_code`|国家代码，ISO3166-1|
 
 
 ## 实例
