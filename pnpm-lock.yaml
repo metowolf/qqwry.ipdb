@@ -1,51 +1,60 @@
-lockfileVersion: '6.0'
+lockfileVersion: '9.0'
 
 settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  '@ipdb/czdb':
-    specifier: ^0.0.2
-    version: 0.0.2
-  '@msgpack/msgpack':
-    specifier: 3.0.0-beta2
-    version: 3.0.0-beta2
-  fast-cidr-tools:
-    specifier: ^0.3.1
-    version: 0.3.1
+importers:
 
-devDependencies:
-  '@ipdb/packer':
-    specifier: ^1.0.3
-    version: 1.0.3
-  ipdb:
-    specifier: ^0.3.3
-    version: 0.3.3
+  .:
+    dependencies:
+      '@ipdb/czdb':
+        specifier: ^0.0.2
+        version: 0.0.2
+      '@msgpack/msgpack':
+        specifier: 3.0.0-beta2
+        version: 3.0.0-beta2
+      fast-cidr-tools:
+        specifier: ^0.3.1
+        version: 0.3.1
+    devDependencies:
+      '@ipdb/packer':
+        specifier: ^1.0.4
+        version: 1.0.4
+      ipdb:
+        specifier: ^0.3.3
+        version: 0.3.3
 
 packages:
 
-  /@ipdb/czdb@0.0.2:
+  '@ipdb/czdb@0.0.2':
     resolution: {integrity: sha512-o14OwLswTxVl+yKu0tx+tDsKAwk/2Hjag8K3FmsRvqUE54UcROIEKNwDMWs4OWe6Oxc6AX8FTKktEELJGGRIXQ==}
-    dependencies:
-      '@msgpack/msgpack': 3.0.0-beta2
-    dev: false
 
-  /@ipdb/packer@1.0.3:
-    resolution: {integrity: sha512-R87ID6pyEDMvZe6c0lzFph5IOd1dypCUW3aIPN6a80Eu22uJXYnUUk0IPL3zS3Pcb+eJTRY08eqVMn+bn+64XA==}
-    dev: true
+  '@ipdb/packer@1.0.4':
+    resolution: {integrity: sha512-V0eOFgMkdau3JhWqRcyreawkXvvwujleUlIMZMCSBLn/AI9aUxtAsMJyiKqLF4cuacY9l4ixJVij6DTslLvG8w==}
 
-  /@msgpack/msgpack@3.0.0-beta2:
+  '@msgpack/msgpack@3.0.0-beta2':
     resolution: {integrity: sha512-y+l1PNV0XDyY8sM3YtuMLK5vE3/hkfId+Do8pLo/OPxfxuFAUwcGz3oiiUuV46/aBpwTzZ+mRWVMtlSKbradhw==}
     engines: {node: '>= 14'}
-    dev: false
 
-  /fast-cidr-tools@0.3.1:
+  fast-cidr-tools@0.3.1:
     resolution: {integrity: sha512-CixbR87xxUYpoZBR6xyFmOkhoOnd8YtmSW956evigw+AOc20fXAn3FXGL5eFAPpGcrs7qzOOEjEPxVMnvRJ87Q==}
     engines: {node: '>=16'}
-    dev: false
 
-  /ipdb@0.3.3:
+  ipdb@0.3.3:
     resolution: {integrity: sha512-lQIa/I5mQ7WbT0h1MCkbixgZslJeEdjBN0a+ElDV2XDfdc0bgGWxUq6+QmMmcx3epu95xBGstmbR+1mX9m4EZQ==}
     engines: {node: '>=6'}
-    dev: true
+
+snapshots:
+
+  '@ipdb/czdb@0.0.2':
+    dependencies:
+      '@msgpack/msgpack': 3.0.0-beta2
+
+  '@ipdb/packer@1.0.4': {}
+
+  '@msgpack/msgpack@3.0.0-beta2': {}
+
+  fast-cidr-tools@0.3.1: {}
+
+  ipdb@0.3.3: {}

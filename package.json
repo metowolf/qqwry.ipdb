@@ -7,7 +7,7 @@
   "author": "metowolf <i@i-meto.com>",
   "license": "MIT",
   "devDependencies": {
-    "@ipdb/packer": "^1.0.3",
+    "@ipdb/packer": "^1.0.4",
     "ipdb": "^0.3.3"
   },
   "dependencies": {
