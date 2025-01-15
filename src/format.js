@@ -243,10 +243,10 @@ const COUNTRY_CODE = {
 
 export function formatCountryCode(country, region) {
   if (COUNTRY_CODE[country]) {
-    return COUNTRY_CODE[country][0]
+    return COUNTRY_CODE[country]
   } else if (COUNTRY_CODE[`${country}-${region}`]) {
-    return COUNTRY_CODE[`${country}-${region}`][0]
+    return COUNTRY_CODE[`${country}-${region}`]
   } else {
-    return ''
+    return null
   }
 }

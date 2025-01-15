@@ -52,14 +52,18 @@ for (const file of files) {
       isp = t[1]
     }
 
-    const country_code = formatCountryCode(country, region)
-    if (country_code === '') {
+    let country_code = '', continent_code = ''
+    const country_info = formatCountryCode(country, region)
+    if (country_info !== null) {
+      country_code = country_info[0]
+      continent_code = country_info[1]
+    } else {
       noCountryCodeSet.add(country)
     }
 
     for (const cidr of cidrs) {
       packer.insert(cidr, [
-        country, region, city, district, owner, isp, country_code
+        country, region, city, district, owner, isp, country_code, continent_code
       ])
     }
   }
@@ -68,7 +72,7 @@ for (const file of files) {
 console.log('存在以下未正确识别 CountryCode', noCountryCodeSet)
 
 const chunk = packer.output([
-  'country_name', 'region_name', 'city_name', 'district_name', 'owner_domain', 'isp_domain', 'country_code'
+  'country_name', 'region_name', 'city_name', 'district_name', 'owner_domain', 'isp_domain', 'country_code', 'continent_code'
 ])
 
 fs.writeFileSync('./build/stand/qqwry.ipdb', chunk)
