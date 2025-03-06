@@ -242,8 +242,8 @@ const COUNTRY_CODE = {
 }
 
 export function formatCountryCode(country, region) {
-  if (COUNTRY_CODE[`${country}-${region}`) {
-    return COUNTRY_CODE[`${country}-${region}`
+  if (COUNTRY_CODE[`${country}-${region}`]) {
+    return COUNTRY_CODE[`${country}-${region}`]
   } else if (COUNTRY_CODE[country]) {
     return COUNTRY_CODE[country]
   } else {
