@@ -4,24 +4,27 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '20 8,20 * * *'
+
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          version: 9
-      - name: Authenticate with private NPM package
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
       - name: Parse
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CZDB_DOWNLOAD_TOKEN: ${{ secrets.CZDB_DOWNLOAD_TOKEN }}
           CZDB_TOKEN: ${{ secrets.CZDB_TOKEN }}
         run: |
-
+          npm install -g npm@latest pnpm@latest
+          npm ci
           pnpm install
           ./build.sh
