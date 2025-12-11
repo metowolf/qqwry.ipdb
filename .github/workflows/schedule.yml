@@ -25,6 +25,5 @@ jobs:
           CZDB_TOKEN: ${{ secrets.CZDB_TOKEN }}
         run: |
           npm install -g npm@latest pnpm@latest
-          npm ci
           pnpm install
           ./build.sh
