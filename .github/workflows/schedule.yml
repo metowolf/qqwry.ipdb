@@ -2,8 +2,6 @@ name: schedule
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '20 8,20 * * *'
 
 permissions:
   id-token: write
