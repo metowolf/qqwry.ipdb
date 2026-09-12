@@ -12,16 +12,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          # 固定 pnpm 9，与仓库中的 lockfileVersion 9.0 保持一致
+          version: 9
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          # npm@latest 要求 node ^22.22.2 || ^24.15.0 || >=26.0.0
+          node-version: '24'
           registry-url: 'https://registry.npmjs.org'
+          cache: 'pnpm'
       - name: Parse
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CZDB_DOWNLOAD_TOKEN: ${{ secrets.CZDB_DOWNLOAD_TOKEN }}
           CZDB_TOKEN: ${{ secrets.CZDB_TOKEN }}
         run: |
-          npm install -g npm@latest pnpm@latest
+          # 不要用 npm@latest：其 engines 会随 node 版本变动而报 EBADENGINE，
+          # 这里锁定 npm 11（支持 OIDC trusted publishing，且兼容 node 24）
+          npm install -g npm@^11
           pnpm install
           ./build.sh
