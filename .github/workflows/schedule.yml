@@ -2,6 +2,9 @@ name: schedule
 
 on:
   workflow_dispatch:
+  # 每天两次检查上游更新（UTC 8:20 / 20:20，即北京时间 16:20 / 次日 4:20）
+  schedule:
+    - cron: '20 8,20 * * *'
 
 permissions:
   id-token: write
