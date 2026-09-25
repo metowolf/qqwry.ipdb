@@ -13,6 +13,7 @@ let json = {
   version: '',
   description: '兼容 IPIP.net(ipdb) 格式的纯真离线数据库',
   main: 'index.js',
+  types: 'index.d.ts',
   repository: 'git@github.com:metowolf/qqwry.ipdb.git',
   author: 'metowolf <i@i-meto.com>',
   license: 'MIT',
@@ -23,11 +24,19 @@ const { join } = require('path')
 module.exports = join(__dirname, 'qqwry.ipdb')
 `
 
+const types = `
+/** Absolute path to the bundled qqwry.ipdb database file. */
+declare const databasePath: string;
+export = databasePath;
+`
+
 json.version = version
 json.name = 'qqwry.raw.ipdb'
 fs.writeFileSync('./build/raw/index.js', index.trim())
+fs.writeFileSync('./build/raw/index.d.ts', types.trim() + '\n')
 fs.writeFileSync('./build/raw/package.json', JSON.stringify(json, null, '  '))
 
 json.name = 'qqwry.ipdb'
 fs.writeFileSync('./build/stand/index.js', index.trim())
+fs.writeFileSync('./build/stand/index.d.ts', types.trim() + '\n')
 fs.writeFileSync('./build/stand/package.json', JSON.stringify(json, null, '  '))
